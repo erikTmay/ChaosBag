@@ -7,8 +7,9 @@ class ChaosBag extends Component {
     return (
       <div className="ChaosBag">
         <div className="ChaosBag-header">
-          <Selectors />
+          <h1>Chaos Bag</h1>
         </div>
+        <Selectors />
       </div>
     );
   }

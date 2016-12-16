@@ -39,18 +39,6 @@ export default class SelectorComponents extends React.Component {
         this.scenarioDifficultyMap[Constants.SCENARIOS.CARNEVALE_OF_HORRORS] = standAloneDifficulties;
     }
 
-    getCampaignNames() {
-        return Object.getOwnPropertyNames(this.campaignScenarioMap);
-    }
-
-    getScenarioNames(campaignName) {
-        return this.campaignScenarioMap[campaignName];
-    }
-
-    getDifficulties(scenarioName) {
-        return this.scenarioDifficultyMap[scenarioName];
-    }
-
     handleCampaignChange(campaignName) {
         this.setState({
             selectedCampaignName: campaignName,
@@ -77,19 +65,19 @@ export default class SelectorComponents extends React.Component {
                     selectorName={Constants.SELECTOR_NAMES.CAMPAIGN}
                     selectedValue={this.state.selectedCampaignName}
                     handleOnChange={this.handleCampaignChange.bind(this)}
-                    values={this.getCampaignNames()}
+                    values={Object.getOwnPropertyNames(this.campaignScenarioMap)}
                 />
                 <Selector
                     selectorName={Constants.SELECTOR_NAMES.SCENARIO}
                     selectedValue={this.state.selectedScenarioName}
                     handleOnChange={this.handleScenarioChange.bind(this)}
-                    values={this.getScenarioNames(this.state.selectedCampaignName)}
+                    values={this.campaignScenarioMap[this.state.selectedCampaignName]}
                 />
                 <Selector
                     selectorName={Constants.SELECTOR_NAMES.DIFFICULTY}
                     selectedValue={this.state.selectedDifficulty}
                     handleOnChange={this.handleDifficultyChange.bind(this)}
-                    values={this.getDifficulties(this.state.selectedScenarioName)}
+                    values={this.scenarioDifficultyMap[this.state.selectedScenarioName]}
                 />
             </div>
         )
