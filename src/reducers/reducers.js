@@ -1,0 +1,68 @@
+import Constants from './../Constants';
+import ActionTypes from './../actions/actionTypes';
+
+const NIGHT_OF_THE_ZEALOT_SCENARIOS = [
+    Constants.SCENARIOS.THE_GATHERING,
+    Constants.SCENARIOS.THE_MIDNIGHT_MASKS,
+    Constants.SCENARIOS.THE_DEVOURER_BELOW,
+];
+const STAND_ALONE_SCENARIOS = [
+    Constants.SCENARIOS.CURSE_OF_THE_ROUGAROU,
+    Constants.SCENARIOS.CARNEVALE_OF_HORRORS
+];
+const ALL_DIFFICULTIES = [
+    Constants.DIFFICULTIES.EASY,
+    Constants.DIFFICULTIES.STANDARD,
+    Constants.DIFFICULTIES.HARD,
+    Constants.DIFFICULTIES.EXPERT
+];
+const STANDARD_AND_HARD_DIFFICULTIES = [
+    Constants.DIFFICULTIES.STANDARD,
+    Constants.DIFFICULTIES.HARD
+];
+const initialState = {
+    selectedCampaignName: Constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT,
+    selectedScenarioName: Constants.SCENARIOS.THE_GATHERING,
+    selectedDifficulty: Constants.DIFFICULTIES.STANDARD,
+    visibleCampaigns: [
+        Constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT,
+        Constants.CAMPAIGNS.STAND_ALONE_SCENARIOS
+    ],
+    visibleScenarios: NIGHT_OF_THE_ZEALOT_SCENARIOS,
+    visibleDifficulties: ALL_DIFFICULTIES
+};
+
+const chaosBagApp = (state = initialState, action) => {
+    switch (action.type) {
+        case ActionTypes.CHANGE_CAMPAIGN:
+            if(action.selectedCampaignName === Constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT) {
+                return Object.assign({}, state, {
+                    selectedCampaignName: action.selectedCampaignName,
+                    selectedDifficulty: Constants.DIFFICULTIES.STANDARD,
+                    visibleScenarios: NIGHT_OF_THE_ZEALOT_SCENARIOS,
+                    visibleDifficulties: ALL_DIFFICULTIES
+                });
+            } else if(action.selectedCampaignName === Constants.CAMPAIGNS.STAND_ALONE_SCENARIOS) {
+                return Object.assign({}, state, {
+                    selectedCampaignName: action.selectedCampaignName,
+                    selectedDifficulty: Constants.DIFFICULTIES.STANDARD,
+                    visibleScenarios: STAND_ALONE_SCENARIOS,
+                    visibleDifficulties: STANDARD_AND_HARD_DIFFICULTIES
+                });
+            } else {
+                return state;
+            }
+        case ActionTypes.CHANGE_SCENARIO:
+            return Object.assign({}, state, {
+                selectedScenarioName: action.selectedScenarioName
+            });
+        case ActionTypes.CHANGE_DIFFICULTY:
+            return Object.assign({}, state, {
+                selectedDifficulty: action.selectedDifficulty
+            });
+        default:
+            return state;
+    }
+};
+
+export default chaosBagApp;

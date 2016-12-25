@@ -1,85 +1,74 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { changeCampaign, changeScenario, changeDifficulty  } from './../actions/actions';
 import Constants from './../Constants';
 import Selector from './Selector';
 
-
-export default class SelectorComponents extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            selectedCampaignName: Constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT,
-            selectedScenarioName: Constants.SCENARIOS.THE_GATHERING,
-            selectedDifficulty: Constants.DIFFICULTIES.STANDARD,
-        };
-        this.campaignScenarioMap = {};
-        this.campaignScenarioMap[Constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT] = [
-            Constants.SCENARIOS.THE_GATHERING,
-            Constants.SCENARIOS.THE_MIDNIGHT_MASKS,
-            Constants.SCENARIOS.THE_DEVOURER_BELOW,
-        ];
-        this.campaignScenarioMap[Constants.CAMPAIGNS.STAND_ALONE_SCENARIOS] = [
-            Constants.SCENARIOS.CURSE_OF_THE_ROUGAROU,
-            Constants.SCENARIOS.CARNEVALE_OF_HORRORS
-        ]
-        const coreDifficulties = [
-            Constants.DIFFICULTIES.EASY,
-            Constants.DIFFICULTIES.STANDARD,
-            Constants.DIFFICULTIES.HARD,
-            Constants.DIFFICULTIES.EXPERT
-        ]
-        const standAloneDifficulties = [
-            Constants.DIFFICULTIES.STANDARD,
-            Constants.DIFFICULTIES.HARD
-        ]
-        this.scenarioDifficultyMap = {};
-        this.scenarioDifficultyMap[Constants.SCENARIOS.THE_GATHERING] = coreDifficulties;
-        this.scenarioDifficultyMap[Constants.SCENARIOS.THE_MIDNIGHT_MASKS] = coreDifficulties;
-        this.scenarioDifficultyMap[Constants.SCENARIOS.THE_DEVOURER_BELOW] = coreDifficulties;
-        this.scenarioDifficultyMap[Constants.SCENARIOS.CURSE_OF_THE_ROUGAROU] = standAloneDifficulties;
-        this.scenarioDifficultyMap[Constants.SCENARIOS.CARNEVALE_OF_HORRORS] = standAloneDifficulties;
-    }
-
-    handleCampaignChange(campaignName) {
-        this.setState({
-            selectedCampaignName: campaignName,
-            selectedDifficulty: Constants.DIFFICULTIES.STANDARD
-        });
-    }
-
-    handleScenarioChange(scenarioName) {
-        this.setState({
-            selectedScenarioName: scenarioName
-        });
-    }
-
-    handleDifficultyChange(difficulty) {
-        this.setState({
-            selectedDifficulty: difficulty
-        });
-    }
-
+class Selectors extends React.Component {
     render() {
         return (
             <div>
                 <Selector
                     selectorName={Constants.SELECTOR_NAMES.CAMPAIGN}
-                    selectedValue={this.state.selectedCampaignName}
-                    handleOnChange={this.handleCampaignChange.bind(this)}
-                    values={Object.getOwnPropertyNames(this.campaignScenarioMap)}
+                    selectedValue={this.props.selectedCampaignName}
+                    handleOnChange={this.props.onCampaignChange.bind(this)}
+                    values={this.props.visibleCampaigns}
                 />
                 <Selector
                     selectorName={Constants.SELECTOR_NAMES.SCENARIO}
-                    selectedValue={this.state.selectedScenarioName}
-                    handleOnChange={this.handleScenarioChange.bind(this)}
-                    values={this.campaignScenarioMap[this.state.selectedCampaignName]}
+                    selectedValue={this.props.selectedScenarioName}
+                    handleOnChange={this.props.onScenarioChange.bind(this)}
+                    values={this.props.visibleScenarios}
                 />
                 <Selector
                     selectorName={Constants.SELECTOR_NAMES.DIFFICULTY}
-                    selectedValue={this.state.selectedDifficulty}
-                    handleOnChange={this.handleDifficultyChange.bind(this)}
-                    values={this.scenarioDifficultyMap[this.state.selectedScenarioName]}
+                    selectedValue={this.props.selectedDifficulty}
+                    handleOnChange={this.props.onDifficultyChange.bind(this)}
+                    values={this.props.visibleDifficulties}
                 />
             </div>
         )
     }
 }
+
+Selectors.propTypes = {
+    onCampaignChange: React.PropTypes.func.isRequired,
+    onScenarioChange: React.PropTypes.func.isRequired,
+    onDifficultyChange: React.PropTypes.func.isRequired,
+    selectedCampaignName: React.PropTypes.string.isRequired,
+    selectedScenarioName: React.PropTypes.string.isRequired,
+    selectedDifficulty: React.PropTypes.string.isRequired,
+    visibleCampaigns: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+    visibleScenarios: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+    visibleDifficulties: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+};
+
+const mapStateToProps = (state) => {
+    return {
+        selectedCampaignName: state.selectedCampaignName,
+        selectedScenarioName: state.selectedScenarioName,
+        selectedDifficulty: state.selectedDifficulty,
+        visibleCampaigns: state.visibleCampaigns,
+        visibleScenarios: state.visibleScenarios,
+        visibleDifficulties: state.visibleDifficulties
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onCampaignChange: (selectedCampaignName) => {
+      dispatch(changeCampaign(selectedCampaignName))
+    },
+    onScenarioChange: (selectedScenarioName) => {
+      dispatch(changeScenario(selectedScenarioName))
+    },
+    onDifficultyChange: (selectedDifficulty) => {
+      dispatch(changeDifficulty(selectedDifficulty))
+    }
+  }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Selectors);

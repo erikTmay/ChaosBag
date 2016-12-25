@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import chaosBagReducers from './reducers/reducers';
 import ChaosBag from './ChaosBag';
 import './index.css';
 
-ReactDOM.render(
-  <ChaosBag />,
-  document.getElementById('root')
+let store = createStore(chaosBagReducers)
+
+render(
+    <Provider store={store}>
+        <ChaosBag />
+    </Provider>,
+    document.getElementById('root')
 );
