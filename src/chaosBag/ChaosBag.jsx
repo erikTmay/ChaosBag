@@ -1,8 +1,8 @@
 import React from 'react';
-import Token from './Token';
-import TokenDefinitions from './TokenDefinitions';
+import Token from './tokens/Token';
+import TokenDefinitions from './tokens/TokenDefinitions';
 
-class Tokens extends React.Component {
+class ChaosBag extends React.Component {
      constructor() {
         super();
         this.state = {
@@ -28,4 +28,4 @@ class Tokens extends React.Component {
     }
 }
 
-export default Tokens;
+export default ChaosBag;

@@ -1,8 +1,8 @@
 import React from 'react';
 
-class Selector extends React.Component {
-    renderOptions() {
-        return this.props.values.map((value, index) => {
+const Selector = (props) => {
+    function renderOptions() {
+        return props.values.map((value, index) => {
             return (
                 <option key={index} value={value}>
                     {value}
@@ -10,18 +10,17 @@ class Selector extends React.Component {
             );
         })
     }
-    render() {
-        return (
-            <div>
-                <label>
-                    {this.props.selectorName}
-                    <select value={this.props.selectedValue} onChange={(event) => this.props.handleOnChange(event.target.value)}>
-                        {this.renderOptions()}
-                    </select>
-                </label>
-            </div>
-        );
-    }
+
+    return (
+        <div>
+            <label>
+                {props.selectorName}
+                <select value={props.selectedValue} onChange={(event) => props.handleOnChange(event.target.value)}>
+                    {renderOptions()}
+                </select>
+            </label>
+        </div>
+    );
 }
 
 Selector.propTypes = {

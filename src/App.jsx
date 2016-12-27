@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './ChaosBag.css';
+import './App.css';
 import Selectors from './selectors/Selectors';
-import Tokens from './tokens/Tokens';
+import ChaosBag from './chaosBag/ChaosBag';
 
-class ChaosBag extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="ChaosBag">
@@ -11,10 +11,8 @@ class ChaosBag extends Component {
           <h1>Chaos Bag</h1>
         </div>
         <Selectors />
-        <Tokens />
+        <ChaosBag />
       </div>
     );
   }
 }
-
-export default ChaosBag;
