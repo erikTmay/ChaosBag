@@ -24,67 +24,83 @@ export default {
     },
     TOKENS: {
         PLUS_ONE: {
-            TYPE: 'Plus One',
+            NAME: 'Plus One',
+            TYPE: 'plusOne',
             IMAGE_PATH: ''
         },
         ZERO: {
-            TYPE: 'Zero',
+            NAME: 'Zero',
+            TYPE: 'zero',
             IMAGE_PATH: ''
         },
         MINUS_ONE: {
-            TYPE: 'Minus One',
+            NAME: 'Minus One',
+            TYPE: 'minusOne',
             IMAGE_PATH: ''
         },
         MINUS_TWO: {
-            TYPE: 'Minus Two',
+            NAME: 'Minus Two',
+            TYPE: 'minusTwo',
             IMAGE_PATH: ''
         },
         MINUS_THREE: {
-            TYPE: 'Minus Three',
+            NAME: 'Minus Three',
+            TYPE: 'minusThree',
             IMAGE_PATH: ''
         },
         MINUS_FOUR: {
-            TYPE: 'Minus Four',
+            NAME: 'Minus Four',
+            TYPE: 'minusFour',
             IMAGE_PATH: ''
         },
         MINUS_FIVE: {
-            TYPE: 'Minus Five',
+            NAME: 'Minus Five',
+            TYPE: 'minusFive',
             IMAGE_PATH: ''
         },
         MINUS_SIX: {
-            TYPE: 'Minus Six',
+            NAME: 'Minus Six',
+            TYPE: 'minusSix',
             IMAGE_PATH: ''
         },
         MINUS_SEVEN: {
-            TYPE: 'Minus Seven',
+            NAME: 'Minus Seven',
+            TYPE: 'minusSeven',
             IMAGE_PATH: ''
         },
         MINUS_EIGHT: {
-            TYPE: 'Minus Eight',
+            NAME: 'Minus Eight',
+            TYPE: 'minusEight',
             IMAGE_PATH: ''
         },
         SKULL: {
-            TYPE: 'Skull',
+            NAME: 'Skull',
+            TYPE: 'skull',
             IMAGE_PATH: ''
         },
         CULTIST: {
-            TYPE: 'Cultist',
+            NAME: 'Cultist',
+            TYPE: 'cultist',
             IMAGE_PATH: ''
         },
         TABLET: {
-            TYPE: 'Tablet',
-            IMAGE_PATH: ''
-        },
-        TENTICLES: {
-            TYPE: 'Tenticles',
+            NAME: 'Tablet',
+            TYPE: 'tablet',
             IMAGE_PATH: ''
         },
         ELDER_THING: {
-            TYPE: 'Elder Thing',
+            NAME: 'Elder Thing',
+            TYPE: 'elderThing',
+            IMAGE_PATH: ''
+        },
+        TENTICLES: {
+            NAME: 'Tenticles',
+            TYPE: 'tenticles',
             IMAGE_PATH: ''
         },
         ELDER_SIGN: {
-            TYPE: 'Elder Sign',
+            NAME: 'Elder Sign',
+            TYPE: 'elderSign',
             IMAGE_PATH: ''
         },
     }
