@@ -11,3 +11,7 @@ export const changeScenario = (selectedScenarioName) => {
 export const changeDifficulty = (selectedDifficulty) => {
   return { type: ActionTypes.CHANGE_DIFFICULTY, selectedDifficulty }
 }
+
+export const changeTokenAmount = (tokenType, amount) => {
+  return { type: ActionTypes.CHANGE_TOKEN_AMOUNT, tokenType, amount }
+}

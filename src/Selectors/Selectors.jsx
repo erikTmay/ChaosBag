@@ -4,31 +4,29 @@ import { changeCampaign, changeScenario, changeDifficulty  } from './../actions/
 import Constants from './../Constants';
 import Selector from './Selector';
 
-class Selectors extends React.Component {
-    render() {
-        return (
-            <div>
-                <Selector
-                    selectorName={Constants.SELECTOR_NAMES.CAMPAIGN}
-                    selectedValue={this.props.selectedCampaignName}
-                    handleOnChange={this.props.onCampaignChange.bind(this)}
-                    values={this.props.visibleCampaigns}
-                />
-                <Selector
-                    selectorName={Constants.SELECTOR_NAMES.SCENARIO}
-                    selectedValue={this.props.selectedScenarioName}
-                    handleOnChange={this.props.onScenarioChange.bind(this)}
-                    values={this.props.visibleScenarios}
-                />
-                <Selector
-                    selectorName={Constants.SELECTOR_NAMES.DIFFICULTY}
-                    selectedValue={this.props.selectedDifficulty}
-                    handleOnChange={this.props.onDifficultyChange.bind(this)}
-                    values={this.props.visibleDifficulties}
-                />
-            </div>
-        )
-    }
+const Selectors = (props) => {
+    return (
+        <div>
+            <Selector
+                selectorName={Constants.SELECTOR_TYPES.CAMPAIGN}
+                selectedValue={props.selectedCampaignName}
+                handleOnChange={props.onCampaignChange.bind(this)}
+                values={props.visibleCampaigns}
+            />
+            <Selector
+                selectorName={Constants.SELECTOR_TYPES.SCENARIO}
+                selectedValue={props.selectedScenarioName}
+                handleOnChange={props.onScenarioChange.bind(this)}
+                values={props.visibleScenarios}
+            />
+            <Selector
+                selectorName={Constants.SELECTOR_TYPES.DIFFICULTY}
+                selectedValue={props.selectedDifficulty}
+                handleOnChange={props.onDifficultyChange.bind(this)}
+                values={props.visibleDifficulties}
+            />
+        </div>
+    );
 }
 
 Selectors.propTypes = {

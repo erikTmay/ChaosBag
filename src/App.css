@@ -1,8 +1,8 @@
-.ChaosBag {
+.app {
   text-align: center;
 }
 
-.ChaosBag-header {
+.app-header {
   background-color: #222;
   height: 75px;
   padding: 25px;

@@ -17,27 +17,75 @@ export default {
         HARD: 'Hard',
         EXPERT: 'Expert'
     },
-    SELECTOR_NAMES: {
+    SELECTOR_TYPES: {
         CAMPAIGN: 'Campaign:',
         SCENARIO: 'Scenario:',
         DIFFICULTY: 'Difficulty:'
     },
-    TOKEN_ALTS: {
-        PLUS_ONE: 'Plus One',
-        ZERO: 'Zero',
-        MINUS_ONE: 'Minus One',
-        MINUS_TWO: 'Minus Two',
-        MINUS_THREE: 'Minus Three',
-        MINUS_FOUR: 'Minus Four',
-        MINUS_FIVE: 'Minus Five',
-        MINUS_SIX: 'Minus Six',
-        MINUS_SEVEN: 'Minus Seven',
-        MINUS_EIGHT: 'Minus Eight',
-        SKULL: 'Skull',
-        CULTIST: 'Cultist',
-        TABLET: 'Tablet',
-        TENTICLES: 'Tenticles',
-        ELDER_THING: 'Elder Thing',
-        ELDER_SIGN: 'Elder Sign'
+    TOKENS: {
+        PLUS_ONE: {
+            TYPE: 'Plus One',
+            IMAGE_PATH: ''
+        },
+        ZERO: {
+            TYPE: 'Zero',
+            IMAGE_PATH: ''
+        },
+        MINUS_ONE: {
+            TYPE: 'Minus One',
+            IMAGE_PATH: ''
+        },
+        MINUS_TWO: {
+            TYPE: 'Minus Two',
+            IMAGE_PATH: ''
+        },
+        MINUS_THREE: {
+            TYPE: 'Minus Three',
+            IMAGE_PATH: ''
+        },
+        MINUS_FOUR: {
+            TYPE: 'Minus Four',
+            IMAGE_PATH: ''
+        },
+        MINUS_FIVE: {
+            TYPE: 'Minus Five',
+            IMAGE_PATH: ''
+        },
+        MINUS_SIX: {
+            TYPE: 'Minus Six',
+            IMAGE_PATH: ''
+        },
+        MINUS_SEVEN: {
+            TYPE: 'Minus Seven',
+            IMAGE_PATH: ''
+        },
+        MINUS_EIGHT: {
+            TYPE: 'Minus Eight',
+            IMAGE_PATH: ''
+        },
+        SKULL: {
+            TYPE: 'Skull',
+            IMAGE_PATH: ''
+        },
+        CULTIST: {
+            TYPE: 'Cultist',
+            IMAGE_PATH: ''
+        },
+        TABLET: {
+            TYPE: 'Tablet',
+            IMAGE_PATH: ''
+        },
+        TENTICLES: {
+            TYPE: 'Tenticles',
+            IMAGE_PATH: ''
+        },
+        ELDER_THING: {
+            TYPE: 'Elder Thing',
+            IMAGE_PATH: ''
+        },
+        ELDER_SIGN: {
+            TYPE: 'Elder Sign',
+            IMAGE_PATH: ''
+        },
     }
 }

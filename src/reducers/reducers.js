@@ -1,5 +1,6 @@
 import Constants from './../Constants';
 import ActionTypes from './../actions/actionTypes';
+import tokenReducer from './tokenReducer';
 
 const NIGHT_OF_THE_ZEALOT_SCENARIOS = [
     Constants.SCENARIOS.THE_GATHERING,
@@ -29,7 +30,25 @@ const initialState = {
         Constants.CAMPAIGNS.STAND_ALONE_SCENARIOS
     ],
     visibleScenarios: NIGHT_OF_THE_ZEALOT_SCENARIOS,
-    visibleDifficulties: ALL_DIFFICULTIES
+    visibleDifficulties: ALL_DIFFICULTIES,
+    tokens: {
+        plusOne: 0,
+        zero: 0,
+        minusOne: 0,
+        minusTwo: 0,
+        minusThree: 0,
+        minusFour: 0,
+        minusFive: 0,
+        minusSix: 0,
+        minusSeven: 0,
+        minusEight: 0,
+        skull: 0,
+        cultist: 0,
+        tablet: 0,
+        elderThing: 0,
+        tenticles: 0,
+        elderSign: 0
+    }
 };
 
 const chaosBagApp = (state = initialState, action) => {
@@ -60,9 +79,14 @@ const chaosBagApp = (state = initialState, action) => {
             return Object.assign({}, state, {
                 selectedDifficulty: action.selectedDifficulty
             });
+        case ActionTypes.CHANGE_TOKEN_AMOUNT:
+            return Object.assign({}, state, {
+                tokens: tokenReducer(state.tokens, action)
+            });
         default:
             return state;
     }
 };
+
 
 export default chaosBagApp;
