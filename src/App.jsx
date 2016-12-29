@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Selectors from './Selectors/Selectors';
+import Selectors from './selectors/Selectors';
 import ChaosBag from './chaosBag/ChaosBag';
 
 export default () => {
