@@ -26,17 +26,17 @@ const STANDARD_AND_HARD_DIFFICULTIES = [
 ];
 
 const Selectors = (props) => {
-    console.log("in selectors: ", props);
 
     let selectableScenarios = [];
     let selectableDifficulties = [];
     if(props.selectedCampaignName === Constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT) {
         selectableScenarios = NIGHT_OF_THE_ZEALOT_SCENARIOS;
         selectableDifficulties = ALL_DIFFICULTIES;
-    } else {
+    } else if(props.selectedCampaignName === Constants.CAMPAIGNS.STAND_ALONE_SCENARIOS) {
         selectableScenarios = STAND_ALONE_SCENARIOS;
         selectableDifficulties = STANDARD_AND_HARD_DIFFICULTIES;
     }
+
     return (
         <div>
             <Selector
@@ -72,9 +72,9 @@ Selectors.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        selectedCampaignName: state.selectedCampaignName,
-        selectedScenarioName: state.selectedScenarioName,
-        selectedDifficulty: state.selectedDifficulty
+        selectedCampaignName: state.selectors.selectedCampaignName,
+        selectedScenarioName: state.selectors.selectedScenarioName,
+        selectedDifficulty: state.selectors.selectedDifficulty
     }
 }
 
