@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { changeCampaign, changeScenario, changeDifficulty  } from './../actions/actionCreators';
 import constants from './../constants';
 import Selector from './Selector';
 
@@ -70,29 +68,4 @@ Selectors.propTypes = {
     selectedDifficulty: React.PropTypes.string.isRequired
 };
 
-const mapStateToProps = (state) => {
-    return {
-        selectedCampaignName: state.selectedCampaignName,
-        selectedScenarioName: state.selectedScenarioName,
-        selectedDifficulty: state.selectedDifficulty
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onCampaignChange: (selectedCampaignName) => {
-      dispatch(changeCampaign(selectedCampaignName))
-    },
-    onScenarioChange: (selectedScenarioName) => {
-      dispatch(changeScenario(selectedScenarioName))
-    },
-    onDifficultyChange: (selectedDifficulty) => {
-      dispatch(changeDifficulty(selectedDifficulty))
-    }
-  }
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Selectors);
+export default Selectors;

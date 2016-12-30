@@ -1,4 +1,3 @@
-
 export default {
     CAMPAIGNS: {
         NIGHT_OF_THE_ZEALOT: 'Night of the Zealot',
