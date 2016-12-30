@@ -1,38 +1,38 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeCampaign, changeScenario, changeDifficulty  } from './../actions/actions';
-import Constants from './../Constants';
+import { changeCampaign, changeScenario, changeDifficulty  } from './../actions/actionCreators';
+import constants from './../constants';
 import Selector from './Selector';
 
-const selectableCampaigns = [Constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT, Constants.CAMPAIGNS.STAND_ALONE_SCENARIOS];
+const selectableCampaigns = [constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT, constants.CAMPAIGNS.STAND_ALONE_SCENARIOS];
 const NIGHT_OF_THE_ZEALOT_SCENARIOS = [
-    Constants.SCENARIOS.THE_GATHERING,
-    Constants.SCENARIOS.THE_MIDNIGHT_MASKS,
-    Constants.SCENARIOS.THE_DEVOURER_BELOW,
+    constants.SCENARIOS.THE_GATHERING,
+    constants.SCENARIOS.THE_MIDNIGHT_MASKS,
+    constants.SCENARIOS.THE_DEVOURER_BELOW,
 ];
 const STAND_ALONE_SCENARIOS = [
-    Constants.SCENARIOS.CURSE_OF_THE_ROUGAROU,
-    Constants.SCENARIOS.CARNEVALE_OF_HORRORS
+    constants.SCENARIOS.CURSE_OF_THE_ROUGAROU,
+    constants.SCENARIOS.CARNEVALE_OF_HORRORS
 ];
 const ALL_DIFFICULTIES = [
-    Constants.DIFFICULTIES.EASY,
-    Constants.DIFFICULTIES.STANDARD,
-    Constants.DIFFICULTIES.HARD,
-    Constants.DIFFICULTIES.EXPERT
+    constants.DIFFICULTIES.EASY,
+    constants.DIFFICULTIES.STANDARD,
+    constants.DIFFICULTIES.HARD,
+    constants.DIFFICULTIES.EXPERT
 ];
 const STANDARD_AND_HARD_DIFFICULTIES = [
-    Constants.DIFFICULTIES.STANDARD,
-    Constants.DIFFICULTIES.HARD
+    constants.DIFFICULTIES.STANDARD,
+    constants.DIFFICULTIES.HARD
 ];
 
 const Selectors = (props) => {
 
     let selectableScenarios = [];
     let selectableDifficulties = [];
-    if(props.selectedCampaignName === Constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT) {
+    if(props.selectedCampaignName === constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT) {
         selectableScenarios = NIGHT_OF_THE_ZEALOT_SCENARIOS;
         selectableDifficulties = ALL_DIFFICULTIES;
-    } else if(props.selectedCampaignName === Constants.CAMPAIGNS.STAND_ALONE_SCENARIOS) {
+    } else if(props.selectedCampaignName === constants.CAMPAIGNS.STAND_ALONE_SCENARIOS) {
         selectableScenarios = STAND_ALONE_SCENARIOS;
         selectableDifficulties = STANDARD_AND_HARD_DIFFICULTIES;
     }
@@ -40,19 +40,19 @@ const Selectors = (props) => {
     return (
         <div>
             <Selector
-                selectorName={Constants.SELECTOR_TYPES.CAMPAIGN}
+                selectorName={constants.SELECTOR_TYPES.CAMPAIGN}
                 selectedValue={props.selectedCampaignName}
                 handleOnChange={props.onCampaignChange.bind(this)}
                 values={selectableCampaigns}
             />
             <Selector
-                selectorName={Constants.SELECTOR_TYPES.SCENARIO}
+                selectorName={constants.SELECTOR_TYPES.SCENARIO}
                 selectedValue={props.selectedScenarioName}
                 handleOnChange={props.onScenarioChange.bind(this)}
                 values={selectableScenarios}
             />
             <Selector
-                selectorName={Constants.SELECTOR_TYPES.DIFFICULTY}
+                selectorName={constants.SELECTOR_TYPES.DIFFICULTY}
                 selectedValue={props.selectedDifficulty}
                 handleOnChange={props.onDifficultyChange.bind(this)}
                 values={selectableDifficulties}
@@ -72,9 +72,9 @@ Selectors.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        selectedCampaignName: state.selectors.selectedCampaignName,
-        selectedScenarioName: state.selectors.selectedScenarioName,
-        selectedDifficulty: state.selectors.selectedDifficulty
+        selectedCampaignName: state.selectedCampaignName,
+        selectedScenarioName: state.selectedScenarioName,
+        selectedDifficulty: state.selectedDifficulty
     }
 }
 

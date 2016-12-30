@@ -1,106 +1,106 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeTokenAmount } from './../actions/actions';
+import { changeTokenAmount } from './../actions/actionCreators';
 import Token from './tokens/Token';
-import Constants from './../Constants'
-import './ChaosBag.css';
+import constants from './../constants'
+import './chaosBag.css';
 
 const ChaosBag = (props) => {
     return (
         <div className="chaos-bag">
             <Token
-                type={Constants.TOKENS.PLUS_ONE.TYPE}
-                imagePath={Constants.TOKENS.PLUS_ONE.IMAGE_PATH}
+                type={constants.TOKENS.PLUS_ONE.TYPE}
+                imagePath={constants.TOKENS.PLUS_ONE.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.plusOneAmount}
                 />
             <Token
-                type={Constants.TOKENS.ZERO.TYPE}
-                imagePath={Constants.TOKENS.ZERO.IMAGE_PATH}
+                type={constants.TOKENS.ZERO.TYPE}
+                imagePath={constants.TOKENS.ZERO.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.zeroAmount}
                 />
             <Token
-                type={Constants.TOKENS.MINUS_ONE.TYPE}
-                imagePath={Constants.TOKENS.MINUS_ONE.IMAGE_PATH}
+                type={constants.TOKENS.MINUS_ONE.TYPE}
+                imagePath={constants.TOKENS.MINUS_ONE.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.minusOneAmount}
                 />
             <Token
-                type={Constants.TOKENS.MINUS_TWO.TYPE}
-                imagePath={Constants.TOKENS.MINUS_TWO.IMAGE_PATH}
+                type={constants.TOKENS.MINUS_TWO.TYPE}
+                imagePath={constants.TOKENS.MINUS_TWO.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.minusTwoAmount}
                 />
             <Token
-                type={Constants.TOKENS.MINUS_THREE.TYPE}
-                imagePath={Constants.TOKENS.MINUS_THREE.IMAGE_PATH}
+                type={constants.TOKENS.MINUS_THREE.TYPE}
+                imagePath={constants.TOKENS.MINUS_THREE.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.minusThreeAmount}
                 />
             <Token
-                type={Constants.TOKENS.MINUS_FOUR.TYPE}
-                imagePath={Constants.TOKENS.MINUS_FOUR.IMAGE_PATH}
+                type={constants.TOKENS.MINUS_FOUR.TYPE}
+                imagePath={constants.TOKENS.MINUS_FOUR.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.minusFourAmount}
                 />
             <Token
-                type={Constants.TOKENS.MINUS_FIVE.TYPE}
-                imagePath={Constants.TOKENS.MINUS_FIVE.IMAGE_PATH}
+                type={constants.TOKENS.MINUS_FIVE.TYPE}
+                imagePath={constants.TOKENS.MINUS_FIVE.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.minusFiveAmount}
                 />
             <Token
-                type={Constants.TOKENS.MINUS_SIX.TYPE}
-                imagePath={Constants.TOKENS.MINUS_SIX.IMAGE_PATH}
+                type={constants.TOKENS.MINUS_SIX.TYPE}
+                imagePath={constants.TOKENS.MINUS_SIX.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.minusSixAmount}
                 />
             <Token
-                type={Constants.TOKENS.MINUS_SEVEN.TYPE}
-                imagePath={Constants.TOKENS.MINUS_SEVEN.IMAGE_PATH}
+                type={constants.TOKENS.MINUS_SEVEN.TYPE}
+                imagePath={constants.TOKENS.MINUS_SEVEN.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.minusSevenAmount}
                 />
             <Token
-                type={Constants.TOKENS.MINUS_EIGHT.TYPE}
-                imagePath={Constants.TOKENS.MINUS_EIGHT.IMAGE_PATH}
+                type={constants.TOKENS.MINUS_EIGHT.TYPE}
+                imagePath={constants.TOKENS.MINUS_EIGHT.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.minusEightAmount}
                 />
             <Token
-                type={Constants.TOKENS.SKULL.TYPE}
-                imagePath={Constants.TOKENS.SKULL.IMAGE_PATH}
+                type={constants.TOKENS.SKULL.TYPE}
+                imagePath={constants.TOKENS.SKULL.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.skullAmount}
                 />
             <Token
-                type={Constants.TOKENS.CULTIST.TYPE}
-                imagePath={Constants.TOKENS.CULTIST.IMAGE_PATH}
+                type={constants.TOKENS.CULTIST.TYPE}
+                imagePath={constants.TOKENS.CULTIST.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.cultistAmount}
                 />
             <Token
-                type={Constants.TOKENS.TABLET.TYPE}
-                imagePath={Constants.TOKENS.TABLET.IMAGE_PATH}
+                type={constants.TOKENS.TABLET.TYPE}
+                imagePath={constants.TOKENS.TABLET.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.tabletAmount}
                 />
             <Token
-                type={Constants.TOKENS.ELDER_THING.TYPE}
-                imagePath={Constants.TOKENS.ELDER_THING.IMAGE_PATH}
+                type={constants.TOKENS.ELDER_THING.TYPE}
+                imagePath={constants.TOKENS.ELDER_THING.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.elderThingAmount}
                 />
             <Token
-                type={Constants.TOKENS.TENTICLES.TYPE}
-                imagePath={Constants.TOKENS.TENTICLES.IMAGE_PATH}
+                type={constants.TOKENS.TENTICLES.TYPE}
+                imagePath={constants.TOKENS.TENTICLES.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.tenticlesAmount}
                 />
             <Token
-                type={Constants.TOKENS.ELDER_SIGN.TYPE}
-                imagePath={Constants.TOKENS.ELDER_SIGN.IMAGE_PATH}
+                type={constants.TOKENS.ELDER_SIGN.TYPE}
+                imagePath={constants.TOKENS.ELDER_SIGN.IMAGE_PATH}
                 setAmount={props.onTokenAmountChange.bind(this)}
                 amount={props.elderSignAmount}
                 />

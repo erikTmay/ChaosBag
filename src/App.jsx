@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './app.css';
 import Selectors from './selectors/Selectors';
 import ChaosBag from './chaosBag/ChaosBag';
 
