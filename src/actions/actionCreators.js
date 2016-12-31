@@ -15,3 +15,11 @@ export const changeDifficulty = (selectedDifficulty) => {
 export const changeTokenAmount = (tokenType, amount) => {
     return { type: actions.CHANGE_TOKEN_AMOUNT, tokenType, amount }
 }
+
+export const onPullToken = () => {
+    return { type: actions.PULL_TOKEN }
+}
+
+export const onRevealedTokenClick = (revealedTokenId, revealedTokenType) => {
+    return { type: actions.PUT_TOKEN_BACK, revealedTokenId, revealedTokenType }
+}

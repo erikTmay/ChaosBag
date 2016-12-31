@@ -9,7 +9,8 @@ const initialState = {
     selectedCampaignName: constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT,
     selectedScenarioName: constants.SCENARIOS.THE_GATHERING,
     selectedDifficulty: constants.DIFFICULTIES.STANDARD,
-    tokens: chaosBagDefaults[constants.SCENARIOS.THE_GATHERING][constants.DIFFICULTIES.STANDARD]
+    tokens: chaosBagDefaults[constants.SCENARIOS.THE_GATHERING][constants.DIFFICULTIES.STANDARD],
+    revealedTokens: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -46,6 +47,10 @@ const reducer = (state = initialState, action) => {
             const newState = _.cloneDeep(state);
             newState.tokens[action.tokenType] = action.amount
             return Object.assign({}, state, newState);
+        case Actions.PULL_TOKEN:
+            return state;
+        case Actions.PUT_TOKEN_BACK:
+            return state;
         default:
             return state;
     }

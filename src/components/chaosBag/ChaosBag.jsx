@@ -1,6 +1,6 @@
 import React from 'react';
-import Token from './tokens/Token';
-import constants from './../constants'
+import Token from './Token';
+import constants from './../../constants'
 import './chaosBag.css';
 
 const ChaosBag = (props) => {

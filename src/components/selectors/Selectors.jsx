@@ -1,6 +1,7 @@
 import React from 'react';
-import constants from './../constants';
+import constants from './../../constants';
 import Selector from './Selector';
+import './selectors.css';
 
 const selectableCampaigns = [constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT, constants.CAMPAIGNS.STAND_ALONE_SCENARIOS];
 const NIGHT_OF_THE_ZEALOT_SCENARIOS = [
@@ -36,7 +37,7 @@ const Selectors = (props) => {
     }
 
     return (
-        <div>
+        <div className="selectors">
             <Selector
                 selectorName={constants.SELECTOR_TYPES.CAMPAIGN}
                 selectedValue={props.selectedCampaignName}

@@ -12,7 +12,7 @@ const Selector = (props) => {
     }
 
     return (
-        <div>
+        <div className="selector">
             <label>
                 {props.selectorName}
                 <select value={props.selectedValue} onChange={(event) => props.handleOnChange(event.target.value)}>
