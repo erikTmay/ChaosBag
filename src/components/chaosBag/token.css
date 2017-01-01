@@ -1,12 +1,11 @@
 .token {
     display: inline-block;
     width: 55px;
-    height: 100px;
     border-width: 1px;
     border-color: #000;
     border-style: solid;
     font-family: 'Open Sans', sans-serif;
-    font-size: 80%;
+    font-size: 100%;
 }
 .token > img, button, p {
     display: block;
