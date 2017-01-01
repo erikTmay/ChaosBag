@@ -8,10 +8,17 @@
     font-size: 100%;
     padding-bottom: 10px;
 }
-.token > img, button, p {
+.token img, button, p {
     display: block;
 }
-.token > img {
+.token img {
     width: 100%;
     margin-bottom: 5px;
+}
+.token-image-wrapper {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 30px;
+    margin-left: auto ;
+    margin-right: auto ;
 }

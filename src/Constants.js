@@ -1,3 +1,6 @@
+import plusOnePath from './images/plusOne.png';
+import zeroPath from './images/zero.png';
+
 export default {
     CAMPAIGNS: {
         NIGHT_OF_THE_ZEALOT: 'Night of the Zealot',
@@ -25,12 +28,12 @@ export default {
         PLUS_ONE: {
             NAME: 'Plus One',
             TYPE: 'plusOne',
-            IMAGE_PATH: ''
+            IMAGE_PATH: plusOnePath
         },
         ZERO: {
             NAME: 'Zero',
             TYPE: 'zero',
-            IMAGE_PATH: ''
+            IMAGE_PATH: zeroPath
         },
         MINUS_ONE: {
             NAME: 'Minus One',

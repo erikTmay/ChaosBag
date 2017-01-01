@@ -1,15 +1,19 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
-import imagePlusOne from './../../images/plusOne.png';
+
 import './token.css';
 
 const Token = (props) => {
     return (
         <div className="token">
-            <img src={imagePlusOne} alt={props.type} />
-            <Button bsSize="xsmall" onClick={() => props.setAmount(props.type, props.amount+1)}>+</Button>
-            <p>{props.amount}</p>
-            <Button bsSize="xsmall" onClick={() => props.setAmount(props.type, props.amount-1)}>-</Button>
+            <div className="token-image-wrapper">
+                <img src={props.imagePath} alt={props.type} />
+            </div>
+            <div  className="amount-change-wrapper">
+                <Button bsSize="xsmall" onClick={() => props.setAmount(props.type, props.amount+1)}>+</Button>
+                <p>{props.amount}</p>
+                <Button bsSize="xsmall" onClick={() => props.setAmount(props.type, props.amount-1)}>-</Button>
+            </div>
         </div>
     );
 }
