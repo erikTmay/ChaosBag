@@ -17,9 +17,9 @@ export default {
         EXPERT: 'Expert'
     },
     SELECTOR_TYPES: {
-        CAMPAIGN: 'Campaign:',
-        SCENARIO: 'Scenario:',
-        DIFFICULTY: 'Difficulty:'
+        CAMPAIGN: 'Campaign',
+        SCENARIO: 'Scenario',
+        DIFFICULTY: 'Difficulty'
     },
     TOKENS: {
         PLUS_ONE: {

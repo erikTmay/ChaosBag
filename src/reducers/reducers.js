@@ -16,7 +16,9 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case Actions.CHANGE_CAMPAIGN:
+        console.log(action.selectedCampaignName);
             if(action.selectedCampaignName === constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT) {
+
                 return Object.assign({}, state, {
                     selectedCampaignName: action.selectedCampaignName,
                     selectedDifficulty: constants.DIFFICULTIES.STANDARD,

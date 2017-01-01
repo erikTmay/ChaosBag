@@ -1,23 +1,29 @@
 import React from 'react';
+import {SplitButton, MenuItem} from 'react-bootstrap';
 
 const Selector = (props) => {
     function renderOptions() {
         return props.values.map((value, index) => {
             return (
-                <option key={index} value={value}>
+                <MenuItem key={index} onClick={() => props.handleOnChange(value)}>
                     {value}
-                </option>
-            );
-        })
+                </MenuItem>
+            )
+        });
     }
 
     return (
         <div className="selector">
             <label>
-                {props.selectorName}
-                <select value={props.selectedValue} onChange={(event) => props.handleOnChange(event.target.value)}>
+                {props.selectorName}:
+                <SplitButton
+                    title={props.selectedValue}
+                    bsStyle="default"
+                    onClick={() => props.handleOnChange(props.selectedValue)}
+                    id={`drop-down-${props.selectorName}`}
+                >
                     {renderOptions()}
-                </select>
+                </SplitButton>
             </label>
         </div>
     );

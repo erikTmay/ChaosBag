@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from 'react-bootstrap';
 import './tokenPuller.css';
 
 const TokenPuller = (props) => {
@@ -13,7 +14,7 @@ const TokenPuller = (props) => {
     }
     return (
         <div className="tokenPuller">
-            <button onClick={props.onPullToken}>Pull Token</button>
+            <Button onClick={props.onPullToken} bsStyle="primary">Pull Token</Button>
             <div className="results">
                 {renderRevealedTokens()}
             </div>
