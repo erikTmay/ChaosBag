@@ -9,9 +9,9 @@ import minusSixPath from './minusSix.png';
 import minusSevenPath from './minusSeven.png';
 import minusEightPath from './minusEight.png';
 import skullPath from './skull.png';
-import cultistPath from './minusOne.png';
-import tabletPath from './minusOne.png';
-import elderThingPath from './minusOne.png';
+import cultistPath from './cultist.png';
+import tabletPath from './tablet.png';
+import elderThingPath from './elderThing.png';
 import tenticlesPath from './tenticles.png';
 import elderSignPath from './elderSign.png';
 
@@ -32,4 +32,4 @@ export default {
     elderThingPath,
     tenticlesPath,
     elderSignPath
-}
+};
