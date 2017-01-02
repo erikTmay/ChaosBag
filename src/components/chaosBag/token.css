@@ -1,5 +1,4 @@
 .token {
-    display: inline-block;
     width: 55px;
     border-width: 1px;
     border-color: gray;
@@ -7,18 +6,26 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 100%;
     padding-bottom: 10px;
-}
-.token img, button, p {
-    display: block;
-}
-.token img {
-    width: 100%;
-    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .token-image-wrapper {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 30px;
-    margin-left: auto ;
-    margin-right: auto ;
+}
+.token-image-wrapper img {
+    width: 100%;
+}
+.amount-change-wrapper {
+    display: block;
+    width: 30px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+.amount-change-wrapper button{
+    display: block;
+    margin: 0 auto;
 }

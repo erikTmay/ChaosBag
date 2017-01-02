@@ -11,7 +11,7 @@ const Token = (props) => {
             </div>
             <div  className="amount-change-wrapper">
                 <Button bsSize="xsmall" onClick={() => props.setAmount(props.type, props.amount+1)}>+</Button>
-                <p>{props.amount}</p>
+                <span>{props.amount}</span>
                 <Button bsSize="xsmall" onClick={() => props.setAmount(props.type, props.amount-1)}>-</Button>
             </div>
         </div>
