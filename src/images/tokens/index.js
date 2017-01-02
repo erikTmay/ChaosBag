@@ -13,7 +13,7 @@ import cultistPath from './minusOne.png';
 import tabletPath from './minusOne.png';
 import elderThingPath from './minusOne.png';
 import tenticlesPath from './tenticles.png';
-import elderSignPath from './minusOne.png';
+import elderSignPath from './elderSign.png';
 
 export default {
     plusOnePath,
