@@ -26,7 +26,7 @@ TokenPuller.propTypes = {
     onPullToken: React.PropTypes.func.isRequired,
     onRevealedTokenClick: React.PropTypes.func.isRequired,
     revealedTokens: React.PropTypes.arrayOf(React.PropTypes.shape({
-        //id: React.PropTypes.number.isRequired,
+        id: React.PropTypes.string.isRequired,
         type: React.PropTypes.string.isRequired,
         imagePath: React.PropTypes.string.isRequired,
    })).isRequired

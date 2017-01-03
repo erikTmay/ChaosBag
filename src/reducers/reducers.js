@@ -19,7 +19,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case Actions.CHANGE_CAMPAIGN:
-        console.log(action.selectedCampaignName);
             if(action.selectedCampaignName === state.selectedCampaignName) {
                 return state;
             } else if(action.selectedCampaignName === constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT) {
@@ -60,7 +59,12 @@ const reducer = (state = initialState, action) => {
         case Actions.PULL_TOKEN:
             return pullTokenReducer(state, action);
         case Actions.PUT_TOKEN_BACK:
-            return state;
+            const newState = _.cloneDeep(state);
+            _.remove(newState.revealedTokens, function(token, index) {
+                return token.id === action.revealedTokenId;
+            });
+            newState.tokens[action.revealedTokenType] += 1;
+            return Object.assign({}, state, newState);
         default:
             return state;
     }
