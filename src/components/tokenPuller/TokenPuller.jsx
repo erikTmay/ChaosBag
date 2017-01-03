@@ -6,7 +6,7 @@ const TokenPuller = (props) => {
     function renderRevealedTokens() {
         return props.revealedTokens.map((revealedToken, index) => {
             return (
-                <div key={revealedToken.id} >
+                <div key={index} >
                     <img src={revealedToken.imagePath} alt={revealedToken.type} onClick={() => props.onRevealedTokenClick(revealedToken.id, revealedToken.type)}/>
                 </div>
             );
@@ -26,7 +26,7 @@ TokenPuller.propTypes = {
     onPullToken: React.PropTypes.func.isRequired,
     onRevealedTokenClick: React.PropTypes.func.isRequired,
     revealedTokens: React.PropTypes.arrayOf(React.PropTypes.shape({
-        id: React.PropTypes.number.isRequired,
+        //id: React.PropTypes.number.isRequired,
         type: React.PropTypes.string.isRequired,
         imagePath: React.PropTypes.string.isRequired,
    })).isRequired

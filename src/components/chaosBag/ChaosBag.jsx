@@ -3,6 +3,9 @@ import Token from './Token';
 import constants from './../../constants'
 import './chaosBag.css';
 
+//TODO: make tokens be an array with all the needed info
+//so you could map over the tokens and  simplify this file
+
 const ChaosBag = (props) => {
     return (
         <div className="chaos-bag">

@@ -3,8 +3,11 @@
 import Actions from './../actions/actions';
 import constants from './../constants';
 import chaosBagDefaults from './../chaosBagDefaults';
+import pullTokenReducer from './pullTokenReducer';
 import _ from 'lodash';
 
+//TODO: make the tokens and revealedTokens arrays look more alike
+//TODO: keeping the imagePath on the token could make the rendering of ChaosBag.jsx cleaner?
 const initialState = {
     selectedCampaignName: constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT,
     selectedScenarioName: constants.SCENARIOS.THE_GATHERING,
@@ -17,8 +20,9 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case Actions.CHANGE_CAMPAIGN:
         console.log(action.selectedCampaignName);
-            if(action.selectedCampaignName === constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT) {
-
+            if(action.selectedCampaignName === state.selectedCampaignName) {
+                return state;
+            } else if(action.selectedCampaignName === constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT) {
                 return Object.assign({}, state, {
                     selectedCampaignName: action.selectedCampaignName,
                     selectedDifficulty: constants.DIFFICULTIES.STANDARD,
@@ -46,11 +50,15 @@ const reducer = (state = initialState, action) => {
                 tokens: _.cloneDeep(chaosBagDefaults[state.selectedScenarioName][action.selectedDifficulty])
             });
         case Actions.CHANGE_TOKEN_AMOUNT:
-            const newState = _.cloneDeep(state);
-            newState.tokens[action.tokenType] = action.amount
-            return Object.assign({}, state, newState);
+            if(action.amount < 0) {
+                return state;
+            } else {
+                const newState = _.cloneDeep(state);
+                newState.tokens[action.tokenType] = action.amount
+                return Object.assign({}, state, newState);
+            }
         case Actions.PULL_TOKEN:
-            return state;
+            return pullTokenReducer(state, action);
         case Actions.PUT_TOKEN_BACK:
             return state;
         default:
