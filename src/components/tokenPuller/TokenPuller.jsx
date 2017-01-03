@@ -6,7 +6,7 @@ const TokenPuller = (props) => {
     function renderRevealedTokens() {
         return props.revealedTokens.map((revealedToken, index) => {
             return (
-                <div key={index} >
+                <div className="revealed-token" key={index} >
                     <img src={revealedToken.imagePath} alt={revealedToken.type} onClick={() => props.onRevealedTokenClick(revealedToken.id, revealedToken.type)}/>
                 </div>
             );

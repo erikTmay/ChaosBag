@@ -1,3 +1,7 @@
 .tokenPuller {
     margin: 10px;
 }
+
+.revealed-token {
+    display: inline-block;
+}
