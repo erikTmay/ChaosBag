@@ -26,14 +26,16 @@ const reducer = (state = initialState, action) => {
                     selectedCampaignName: action.selectedCampaignName,
                     selectedDifficulty: constants.DIFFICULTIES.STANDARD,
                     selectedScenarioName: constants.SCENARIOS.THE_GATHERING,
-                    tokens: _.cloneDeep(chaosBagDefaults[constants.SCENARIOS.THE_GATHERING][constants.DIFFICULTIES.STANDARD])
+                    tokens: _.cloneDeep(chaosBagDefaults[constants.SCENARIOS.THE_GATHERING][constants.DIFFICULTIES.STANDARD]),
+                    revealedTokens: []
                 });
             } else if(action.selectedCampaignName === constants.CAMPAIGNS.STAND_ALONE_SCENARIOS) {
                 return Object.assign({}, state, {
                     selectedCampaignName: action.selectedCampaignName,
                     selectedDifficulty: constants.DIFFICULTIES.STANDARD,
                     selectedScenarioName: constants.SCENARIOS.CURSE_OF_THE_ROUGAROU,
-                    tokens: _.cloneDeep(chaosBagDefaults[constants.SCENARIOS.CURSE_OF_THE_ROUGAROU][constants.DIFFICULTIES.STANDARD])
+                    tokens: _.cloneDeep(chaosBagDefaults[constants.SCENARIOS.CURSE_OF_THE_ROUGAROU][constants.DIFFICULTIES.STANDARD]),
+                    revealedTokens: []
                 });
             } else {
                 return state;
@@ -41,12 +43,14 @@ const reducer = (state = initialState, action) => {
         case Actions.CHANGE_SCENARIO:
             return Object.assign({}, state, {
                 selectedScenarioName: action.selectedScenarioName,
-                tokens: _.cloneDeep(chaosBagDefaults[action.selectedScenarioName][state.selectedDifficulty])
+                tokens: _.cloneDeep(chaosBagDefaults[action.selectedScenarioName][state.selectedDifficulty]),
+                revealedTokens: []
             });
         case Actions.CHANGE_DIFFICULTY:
             return Object.assign({}, state, {
                 selectedDifficulty: action.selectedDifficulty,
-                tokens: _.cloneDeep(chaosBagDefaults[state.selectedScenarioName][action.selectedDifficulty])
+                tokens: _.cloneDeep(chaosBagDefaults[state.selectedScenarioName][action.selectedDifficulty]),
+                revealedTokens: []
             });
         case Actions.CHANGE_TOKEN_AMOUNT:
             if(action.amount < 0) {
