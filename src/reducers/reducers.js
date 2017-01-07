@@ -4,17 +4,8 @@ import Actions from './../actions/actions';
 import constants from './../constants';
 import chaosBagDefaults from './../chaosBagDefaults';
 import pullTokenReducer from './pullTokenReducer';
+import initialState from './initialState';
 import _ from 'lodash';
-
-//TODO: make the tokens and revealedTokens arrays look more alike
-//TODO: keeping the imagePath on the token could make the rendering of ChaosBag.jsx cleaner?
-const initialState = {
-    selectedCampaignName: constants.CAMPAIGNS.NIGHT_OF_THE_ZEALOT,
-    selectedScenarioName: constants.SCENARIOS.THE_GATHERING,
-    selectedDifficulty: constants.DIFFICULTIES.STANDARD,
-    tokens: chaosBagDefaults[constants.SCENARIOS.THE_GATHERING][constants.DIFFICULTIES.STANDARD],
-    revealedTokens: []
-}
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
