@@ -38,24 +38,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onCampaignChange: (selectedCampaignName) => {
-            dispatch(changeCampaign(selectedCampaignName))
-        },
-        onScenarioChange: (selectedScenarioName) => {
-            dispatch(changeScenario(selectedScenarioName))
-        },
-        onDifficultyChange: (selectedDifficulty) => {
-            dispatch(changeDifficulty(selectedDifficulty))
-        },
-        onTokenAmountChange: (tokenType, amount) => {
-            dispatch(changeTokenAmount(tokenType, amount))
-        },
-        onPullToken: () => {
-            dispatch(onPullToken())
-        },
-        onRevealedTokenClick: (revealedTokenId, revealedTokenType) => {
-            dispatch(onRevealedTokenClick(revealedTokenId, revealedTokenType))
-        }
+        onCampaignChange: (selectedCampaignName) => dispatch(changeCampaign(selectedCampaignName)),
+        onScenarioChange: (selectedScenarioName) => dispatch(changeScenario(selectedScenarioName)),
+        onDifficultyChange: (selectedDifficulty) => dispatch(changeDifficulty(selectedDifficulty)),
+        onTokenAmountChange: (tokenType, amount) => dispatch(changeTokenAmount(tokenType, amount)),
+        onPullToken: () => dispatch(onPullToken()),
+        onRevealedTokenClick: (revealedTokenId, revealedTokenType) => dispatch(onRevealedTokenClick(revealedTokenId, revealedTokenType))
     }
 }
 

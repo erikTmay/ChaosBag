@@ -41,19 +41,19 @@ const Selectors = (props) => {
             <Selector
                 selectorName={constants.SELECTOR_TYPES.CAMPAIGN}
                 selectedValue={props.selectedCampaignName}
-                handleOnChange={props.onCampaignChange.bind(this)}
+                handleOnChange={props.onCampaignChange}
                 values={selectableCampaigns}
             />
             <Selector
                 selectorName={constants.SELECTOR_TYPES.SCENARIO}
                 selectedValue={props.selectedScenarioName}
-                handleOnChange={props.onScenarioChange.bind(this)}
+                handleOnChange={props.onScenarioChange}
                 values={selectableScenarios}
             />
             <Selector
                 selectorName={constants.SELECTOR_TYPES.DIFFICULTY}
                 selectedValue={props.selectedDifficulty}
-                handleOnChange={props.onDifficultyChange.bind(this)}
+                handleOnChange={props.onDifficultyChange}
                 values={selectableDifficulties}
             />
         </div>

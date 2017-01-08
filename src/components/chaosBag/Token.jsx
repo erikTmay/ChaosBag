@@ -1,6 +1,5 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
-
 import './token.css';
 
 const Token = (props) => {
